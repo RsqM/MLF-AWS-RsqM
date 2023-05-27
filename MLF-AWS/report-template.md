@@ -48,10 +48,10 @@ TODO: Add your explanation
 TODO: Add your explanation
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
-|model|hpo1|hpo2|hpo3|score
-0|initial|prescribed_values|prescribed_values|presets: 'high quality' (auto_stack=True)|1.84484|
-1|add_features|prescribed_values|prescribed_values|presets: 'high quality' (auto_stack=True)|0.50695|
-2|hpo (top-hpo-model: hpo2)|Tree-Based Models: (GBM, XT, XGB & RF)|KNN|presets: 'optimize_for_deployment|0.44798|
+|| model | hpo1 | hpo2 | hpo3 | score |
+|0|initial|prescribed_values|prescribed_values|presets: 'high quality' (auto_stack=True)|1.84484|
+|1|add_features|prescribed_values|prescribed_values|presets: 'high quality' (auto_stack=True)|0.50695|
+|2|hpo (top-hpo-model: hpo2)|Tree-Based Models: (GBM, XT, XGB & RF)|KNN|presets: 'optimize_for_deployment|0.44798|
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
