@@ -42,16 +42,25 @@ Overall, these steps resulted in enhanced model performance and a more robust re
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
-TODO: Add your explanation
+Hyperparameter tuning proved to be beneficial as it improved the model's performance compared to the initial submission. Three different configurations were used for hyperparameter optimization experiments. Although the hyperparameter-tuned models performed competitively with the model that included EDA and added features, the latter performed significantly better on the Kaggle test dataset.
+
+Observations:
+
+Consideration was given to the prescribed settings when using the autogluon package for training. However, the performance of the hyperparameter-optimized models was suboptimal due to the fixed set of hyperparameter values provided by the user, which limited the exploration options for autogluon.
+
+The 'time_limit' and 'presets' parameters played a crucial role in hyperparameter optimization using autogluon. Insufficient time limit could result in autogluon failing to build any models for the specified hyperparameters. Moreover, using presets like "high_quality" with auto_stack enabled required high memory usage and were computationally intensive within the given time limit and available resources. As a result, lighter and faster presets such as 'medium_quality' and 'optimized_for_deployment' were experimented with. Ultimately, the "optimized_for_deployment" preset, which was faster and lighter, was chosen for the hyperparameter optimization routine as other presets failed to create models using AutoGluon for the experimental configurations.
+
+Balancing exploration and exploitation proved to be the major challenge when using AutoGluon with a specified range of hyperparameters.
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
-TODO: Add your explanation
+Given additional time, I would explore further possibilities by running AutoGluon for an extended period with a high-quality preset and improved hyperparameter tuning. This would allow for a more thorough investigation of potential outcomes and potentially yield better results.
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
-|| model | hpo1 | hpo2 | hpo3 | score |
-|0|initial|prescribed_values|prescribed_values|presets: 'high quality' (auto_stack=True)|1.84484|
-|1|add_features|prescribed_values|prescribed_values|presets: 'high quality' (auto_stack=True)|0.50695|
-|2|hpo (top-hpo-model: hpo2)|Tree-Based Models: (GBM, XT, XGB & RF)|KNN|presets: 'optimize_for_deployment|0.44798|
+|model|hpo1|hpo2|hpo3|score|
+|--|--|--|--|--|
+|initial|prescribed_values|prescribed_values|"presets: 'high quality' (auto_stack=True)"|1.84484|
+|add_features|prescribed_values|prescribed_values|"presets: 'high quality' (auto_stack=True)"|0.50695|
+|hpo (top-hpo-model: hpo2)|Tree-Based Models: (GBM, XT, XGB & RF)|KNN|"presets: 'optimize_for_deployment"|0.44798|
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
